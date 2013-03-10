@@ -1,0 +1,5 @@
+Sqrt-Decomposition is a method or data structure that enables process some typical
+operations (find sum of sub-array, find minimum/maximum, etc.) with O(sqrt(n)) complexity
+which is better than O(n) as trivial algorithm.
+
+Detailed description in russian you can find here - http://e-maxx.ru/algo/sqrt_decomposition

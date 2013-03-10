@@ -1,4 +1,4 @@
-*/bin/
-*/obj/
+Algorithms/*/bin/
+Algorithms/*/obj/
 
-*.suo
+Algorithms/*.suo

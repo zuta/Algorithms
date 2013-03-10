@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RangeSumProblem
 {
-    class Program
+    public interface IRangeSumSolver
     {
-        static void Main(string[] args)
-        {
-        }
+
+        List<int> Solve(int[] array, List<Request> requests);
+
     }
 }
