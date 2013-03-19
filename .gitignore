@@ -1,5 +1,5 @@
-Algorithms/*/bin/*
-Algorithms/*/obj/*
-Algorithms/*.suo
+*bin*
+*obj*
+*.suo
 
-Algorithms/TestResults/*
+*TestResults*
