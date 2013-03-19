@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RangeSumProblem
+namespace DataStructures.SqrtDecomposition.RangeSumProblem
 {
-    class SqrtDecompositionRangeSumSolver : IRangeSumSolver
+    public class SqrtDecompositionRangeSumSolver : IRangeSumSolver
     {
         public List<int> Solve(int[] array, List<Request> requests)
         {
@@ -39,8 +39,7 @@ namespace RangeSumProblem
             }
             else
             {
-                int from = lDPosition * numbersInOneDecomposedPosition + l % numbersInOneDecomposedPosition;
-                for (int i = from ; i < (lDPosition + 1) * numbersInOneDecomposedPosition; i++)
+                for (int i = l ; i < (lDPosition + 1) * numbersInOneDecomposedPosition; i++)
                 {
                     sum += array[i];
                 }
@@ -50,8 +49,7 @@ namespace RangeSumProblem
                     sum += decomposedArray[i];
                 }
 
-                int to = Math.Min(array.Length - 1, rDPosition * numbersInOneDecomposedPosition + r % numbersInOneDecomposedPosition);
-                for (int i = rDPosition * numbersInOneDecomposedPosition; i <= to; i++)
+                for (int i = rDPosition * numbersInOneDecomposedPosition; i <= r; i++)
                 {
                     sum += array[i];
                 }

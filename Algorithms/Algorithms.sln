@@ -10,6 +10,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQRT-Decomposition", "SQRT-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RangeSumProblem", "Data Structures\SQRT-Decomposition\RangeSumProblem\RangeSumProblem.csproj", "{536E8030-CD1F-4E36-8864-195F59FF0454}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3571690E-8781-401C-B5B6-210596542C46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data structures", "Data structures", "{689869E2-229B-41E8-8A75-8B282C266DF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQRT-DecompositionTests", "Tests\Data Structures\SQRT-DecompositionTests\SQRT-DecompositionTests.csproj", "{95603FCF-26D9-427F-A204-6A760ED7F106}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +26,10 @@ Global
 		{536E8030-CD1F-4E36-8864-195F59FF0454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{536E8030-CD1F-4E36-8864-195F59FF0454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{536E8030-CD1F-4E36-8864-195F59FF0454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95603FCF-26D9-427F-A204-6A760ED7F106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95603FCF-26D9-427F-A204-6A760ED7F106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95603FCF-26D9-427F-A204-6A760ED7F106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95603FCF-26D9-427F-A204-6A760ED7F106}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -27,5 +37,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1F87ECE9-6658-4C60-AB51-8A274AABB6B3} = {99AEB7B6-FEE3-46E8-A00D-0FD465FE40B6}
 		{536E8030-CD1F-4E36-8864-195F59FF0454} = {1F87ECE9-6658-4C60-AB51-8A274AABB6B3}
+		{689869E2-229B-41E8-8A75-8B282C266DF7} = {3571690E-8781-401C-B5B6-210596542C46}
+		{95603FCF-26D9-427F-A204-6A760ED7F106} = {689869E2-229B-41E8-8A75-8B282C266DF7}
 	EndGlobalSection
 EndGlobal

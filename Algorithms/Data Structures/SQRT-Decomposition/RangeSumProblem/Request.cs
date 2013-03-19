@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RangeSumProblem
+namespace DataStructures.SqrtDecomposition.RangeSumProblem
 {
     public struct Request
     {
