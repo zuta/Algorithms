@@ -16,6 +16,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data structures", "Data str
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQRT-DecompositionTests", "Tests\Data Structures\SQRT-DecompositionTests\SQRT-DecompositionTests.csproj", "{95603FCF-26D9-427F-A204-6A760ED7F106}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binary Heap", "Binary Heap", "{A89F0B65-B83D-4D19-8B54-D642343315D6}"
+	ProjectSection(SolutionItems) = preProject
+		Data Structures\Binary Heap\Description.txt = Data Structures\Binary Heap\Description.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryHeapLibrary", "Data Structures\Binary Heap\BinaryHeapLibrary\BinaryHeapLibrary.csproj", "{C44BA0AD-291D-44E8-8E16-152835245B0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryHeapTests", "Tests\Data Structures\BinaryHeapTests\BinaryHeapTests.csproj", "{FCCF1083-BB00-4683-83E7-00940F81DCB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,14 +39,25 @@ Global
 		{95603FCF-26D9-427F-A204-6A760ED7F106}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95603FCF-26D9-427F-A204-6A760ED7F106}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95603FCF-26D9-427F-A204-6A760ED7F106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C44BA0AD-291D-44E8-8E16-152835245B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44BA0AD-291D-44E8-8E16-152835245B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44BA0AD-291D-44E8-8E16-152835245B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44BA0AD-291D-44E8-8E16-152835245B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCCF1083-BB00-4683-83E7-00940F81DCB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCCF1083-BB00-4683-83E7-00940F81DCB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCCF1083-BB00-4683-83E7-00940F81DCB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCCF1083-BB00-4683-83E7-00940F81DCB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1F87ECE9-6658-4C60-AB51-8A274AABB6B3} = {99AEB7B6-FEE3-46E8-A00D-0FD465FE40B6}
+		{A89F0B65-B83D-4D19-8B54-D642343315D6} = {99AEB7B6-FEE3-46E8-A00D-0FD465FE40B6}
 		{536E8030-CD1F-4E36-8864-195F59FF0454} = {1F87ECE9-6658-4C60-AB51-8A274AABB6B3}
 		{689869E2-229B-41E8-8A75-8B282C266DF7} = {3571690E-8781-401C-B5B6-210596542C46}
 		{95603FCF-26D9-427F-A204-6A760ED7F106} = {689869E2-229B-41E8-8A75-8B282C266DF7}
+		{FCCF1083-BB00-4683-83E7-00940F81DCB3} = {689869E2-229B-41E8-8A75-8B282C266DF7}
+		{C44BA0AD-291D-44E8-8E16-152835245B0D} = {A89F0B65-B83D-4D19-8B54-D642343315D6}
 	EndGlobalSection
 EndGlobal

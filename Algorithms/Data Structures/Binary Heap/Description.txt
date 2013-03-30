@@ -1,0 +1,26 @@
+﻿Heap is a specialized tree-based data structure that satisfies the heap property:
+If A is a parent node of B then key(A) is ordered with respect to key(B) with 
+the same ordering applying across the heap. 
+
+The operations commonly performed with a heap are:
+1. create-heap: create an empty heap
+2. heapify: create a heap out of given array of elements
+3. find-max or find-min: find the maximum item of a max-heap or a minimum item of a min-heap, respectively (aka, peek)
+4. delete-max or delete-min: removing the root node of a max- or min-heap, respectively
+4. increase-key or decrease-key: updating a key within a max- or min-heap, respectively
+5. insert: adding a new key to the heap
+6. merge: joining two heaps to form a valid new heap containing all the elements of both.
+
+Complexity (min-heap):
+
+find-min		Θ(1)
+delete-min		Θ(log n)
+insert			Θ(log n)
+decrease-key	Θ(log n)
+merge			Θ(n)
+
+--
+from Wiki http://en.wikipedia.org/wiki/Heap_(data_structure)
+
+
+Binary Heap is a heap where each node have at most two children.
