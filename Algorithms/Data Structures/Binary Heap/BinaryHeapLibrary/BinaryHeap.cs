@@ -100,7 +100,7 @@ namespace BinaryHeapLibrary
             }
         }
 
-        public T FindTheBest()
+        public T GetTheBest()
         {
             if (this.items.Count > 0)
             {

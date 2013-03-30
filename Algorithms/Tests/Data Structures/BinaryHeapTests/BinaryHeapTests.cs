@@ -43,7 +43,7 @@ namespace BinaryHeapTests
         }
 
         [TestMethod]
-        public void FindTheBestTest()
+        public void GetTheBestTest()
         {
             int[] values = { 1, 2, 10, 24, 12, 44, 10, 5 };
             int expectedBest = values[0];
@@ -56,7 +56,7 @@ namespace BinaryHeapTests
                 heap.Insert(value);
             }
 
-            Assert.AreEqual(expectedBest, heap.FindTheBest());
+            Assert.AreEqual(expectedBest, heap.GetTheBest());
         }
 
         [TestMethod]
@@ -88,7 +88,7 @@ namespace BinaryHeapTests
             }
 
             Assert.AreEqual(values.Count - deleteCount, heap.Count);
-            Assert.AreEqual(expectedTheBestValue, heap.FindTheBest());
+            Assert.AreEqual(expectedTheBestValue, heap.GetTheBest());
         }
 
         [TestMethod]

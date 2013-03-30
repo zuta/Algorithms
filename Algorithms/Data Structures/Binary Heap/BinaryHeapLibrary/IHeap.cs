@@ -14,6 +14,6 @@ namespace BinaryHeapLibrary
 
         bool DeleteTheBest();
 
-        T FindTheBest();
+        T GetTheBest();
     }
 }
