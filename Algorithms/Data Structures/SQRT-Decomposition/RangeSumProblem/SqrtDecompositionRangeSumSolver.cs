@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DataStructures.SqrtDecomposition.RangeSumProblem
+namespace Algorithms.DataStructures.SqrtDecomposition.RangeSumProblem
 {
     public class SqrtDecompositionRangeSumSolver : IRangeSumSolver
     {

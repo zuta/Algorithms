@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BinaryHeapLibrary
+namespace Algorithms.DataStructure.BinaryHeap.BinaryHeapLibrary
 {
     public class BinaryHeap<T> : IHeap<T>
     {

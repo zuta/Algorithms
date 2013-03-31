@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace DataStructures.SqrtDecomposition.RangeSumProblem
+namespace Algorithms.DataStructures.SqrtDecomposition.RangeSumProblem
 {
     class Program
     {

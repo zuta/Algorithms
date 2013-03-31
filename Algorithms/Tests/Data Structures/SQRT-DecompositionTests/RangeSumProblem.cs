@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DataStructures.SqrtDecomposition.RangeSumProblem;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using Algorithms.DataStructures.SqrtDecomposition.RangeSumProblem;
 
 namespace SQRT_DecompositionTests
 {

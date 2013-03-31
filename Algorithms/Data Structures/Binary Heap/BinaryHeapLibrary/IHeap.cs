@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BinaryHeapLibrary
+namespace Algorithms.DataStructure.BinaryHeap.BinaryHeapLibrary
 {
     public interface IHeap<T>
     {

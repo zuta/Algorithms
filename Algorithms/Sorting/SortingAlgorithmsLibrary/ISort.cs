@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BaseSortLibrary
+namespace Algorithms.Sorting.SortingAlgorithmsLibrary
 {
     public interface ISort<T>
         where T : IComparable<T>

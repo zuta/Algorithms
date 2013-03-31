@@ -1,10 +1,9 @@
-﻿using BaseSortLibrary;
-using BinaryHeapLibrary;
+﻿using Algorithms.DataStructure.BinaryHeap.BinaryHeapLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HeapSortLibrary
+namespace Algorithms.Sorting.SortingAlgorithmsLibrary
 {
     public class HeapSort<T> : ISort<T>
         where T : IComparable<T>

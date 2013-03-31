@@ -1,17 +1,12 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BaseSortLibrary;
-using HeapSortLibrary;
-using System.Linq;
-using System.Collections.Generic;
+using Algorithms.Sorting.SortingAlgorithmsLibrary;
 
 namespace SortingTests
 {
     [TestClass]
-    public class HeapSortTests
+    public class HeapSortTests : BaseSortTest
     {
-        private ISort<int> sorter;
-
         [TestInitialize]
         public void Initialize()
         {
@@ -19,36 +14,25 @@ namespace SortingTests
         }
 
         [TestMethod]
-        public void SimpleSortTest()
+        public void HeapSortTests_SimpleTest()
         {
-            int[] array = { 1, 3, 1, 0, 5, 9, 4, 13 };
-
-            int[] expectedArray = { 0, 1, 1, 3, 4, 5, 9, 13 };
-
+            // arrange
+            PrepareSimpleSortTest();
+            // act
             sorter.Sort(array);
-
-            Assert.IsTrue(array.Except(expectedArray).Count() == 0);
-            Assert.IsTrue(expectedArray.Except(array).Count() == 0);
+            // assert
+            CheckResult();
         }
 
         [TestMethod]
-        public void RandomSortTest()
+        public void HeapSortTests_RandomLargeTest()
         {
-            Random r = new Random();
-            int n = (r.Next(1000) + 1) * (r.Next(1000) + 1);
-            int[] array = new int[n];
-            for (int i = 0; i < n; i++)
-            {
-                array[i] = r.Next(int.MaxValue) - r.Next(int.MaxValue);
-            }
-
-            List<int> expected = array.ToList();
-            expected.Sort();
-
+            // arrange
+            PrepareRandomLargeTest();
+            // act
             sorter.Sort(array);
-
-            Assert.IsTrue(array.Except(expected).Count() == 0);
-            Assert.IsTrue(expected.Except(array).Count() == 0);
+            // arrange
+            CheckResult();
         }
     }
 }

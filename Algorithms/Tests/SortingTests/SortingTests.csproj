@@ -52,15 +52,12 @@
   <ItemGroup>
     <Compile Include="HeapSortTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseSortTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Sorting\BaseSortLibrary\BaseSortLibrary.csproj">
-      <Project>{5dac2020-e843-4a9d-a5e5-db796515f7b6}</Project>
-      <Name>BaseSortLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sorting\HeapSortLibrary\HeapSortLibrary.csproj">
-      <Project>{2b1e891c-3237-49c2-b7f1-02224641980b}</Project>
-      <Name>HeapSortLibrary</Name>
+    <ProjectReference Include="..\..\Sorting\SortingAlgorithmsLibrary\SortingAlgorithmsLibrary.csproj">
+      <Project>{95d82183-9155-4479-aa17-9da97ae7a552}</Project>
+      <Name>SortingAlgorithmsLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

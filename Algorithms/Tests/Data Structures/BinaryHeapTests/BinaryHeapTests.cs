@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BinaryHeapLibrary;
 using System.Linq;
 using System.Collections.Generic;
+using Algorithms.DataStructure.BinaryHeap.BinaryHeapLibrary;
 
 namespace BinaryHeapTests
 {

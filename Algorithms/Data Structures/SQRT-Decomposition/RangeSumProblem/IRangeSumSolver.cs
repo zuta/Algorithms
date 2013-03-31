@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataStructures.SqrtDecomposition.RangeSumProblem
+namespace Algorithms.DataStructures.SqrtDecomposition.RangeSumProblem
 {
     public interface IRangeSumSolver
     {

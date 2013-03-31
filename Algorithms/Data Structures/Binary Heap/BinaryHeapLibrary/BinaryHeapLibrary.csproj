@@ -7,7 +7,7 @@
     <ProjectGuid>{C44BA0AD-291D-44E8-8E16-152835245B0D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BinaryHeapLibrary</RootNamespace>
+    <RootNamespace>Algorithms.DataStructure.BinaryHeap.BinaryHeapLibrary</RootNamespace>
     <AssemblyName>BinaryHeapLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

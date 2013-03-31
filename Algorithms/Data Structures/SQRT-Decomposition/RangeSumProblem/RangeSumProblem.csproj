@@ -7,7 +7,7 @@
     <ProjectGuid>{536E8030-CD1F-4E36-8864-195F59FF0454}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataStructures.SqrtDecomposition.RangeSumProblem</RootNamespace>
+    <RootNamespace>Algorithms.DataStructures.SqrtDecomposition.RangeSumProblem</RootNamespace>
     <AssemblyName>RangeSumProblem</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

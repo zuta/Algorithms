@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructures.SqrtDecomposition.RangeSumProblem
+namespace Algorithms.DataStructures.SqrtDecomposition.RangeSumProblem
 {
     public struct Request
     {
