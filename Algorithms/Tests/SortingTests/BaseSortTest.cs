@@ -12,19 +12,18 @@ namespace SortingTests
         protected int[] array;
         protected int[] expectedResult;
 
-        protected void PrepareSimpleSortTest()
+        private void ArrangeSimpleSortTest()
         {
             this.array = new int[] { 1, 3, 1, 0, 5, 9, 4, 13 };
 
             this.expectedResult = new int[] { 0, 1, 1, 3, 4, 5, 9, 13 };
         }
 
-        public void PrepareRandomLargeTest()
+        private void ArrangeRandomLargeTest()
         {
             Random r = new Random();
 
             int n = (r.Next(1000) + 1) * (r.Next(1000) + 1);
-
             this.array = new int[n];
             this.expectedResult = new int[n];
             for (int i = 0; i < n; i++)
@@ -36,10 +35,35 @@ namespace SortingTests
             Array.Sort(expectedResult);
         }
 
-        protected void CheckResult()
+        private void Act()
+        {
+            this.sorter.Sort(array);
+        }
+
+        private void AssertResult()
         {
             Assert.IsTrue(array.Except(expectedResult).Count() == 0);
             Assert.IsTrue(expectedResult.Except(array).Count() == 0);
+        }
+
+        protected void ExecuteSimpleSortTest()
+        {
+            ExecuteTest(ArrangeSimpleSortTest);
+        }
+
+        protected void ExecuteRandomLargeSortTest()
+        {
+            ExecuteTest(ArrangeRandomLargeTest);
+        }
+
+        private void ExecuteTest(Action arrangePart)
+        {
+            // arange
+            arrangePart();
+            // act
+            Act();
+            // assert
+            AssertResult();
         }
     }
 }

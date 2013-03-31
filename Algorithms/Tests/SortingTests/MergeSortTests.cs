@@ -5,22 +5,22 @@ using Algorithms.Sorting.SortingAlgorithmsLibrary;
 namespace SortingTests
 {
     [TestClass]
-    public class HeapSortTests : BaseSortTest
+    public class MergeSortTests : BaseSortTest
     {
         [TestInitialize]
         public void Initialize()
         {
-            sorter = new HeapSort<int>();
+            sorter = new MergeSort<int>();
         }
 
         [TestMethod]
-        public void HeapSortTests_SimpleTest()
+        public void MergeSortTests_SimpleTest()
         {
             ExecuteSimpleSortTest();
         }
 
         [TestMethod]
-        public void HeapSortTests_RandomLargeTest()
+        public void MergeSortTests_RandomLargeTest()
         {
             ExecuteRandomLargeSortTest();
         }

@@ -53,6 +53,7 @@
     <Compile Include="HeapSortTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseSortTest.cs" />
+    <Compile Include="MergeSortTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Sorting\SortingAlgorithmsLibrary\SortingAlgorithmsLibrary.csproj">
