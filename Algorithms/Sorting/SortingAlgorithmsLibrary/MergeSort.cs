@@ -11,7 +11,7 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
     {
         public void Sort(T[] array)
         {
-            T[] temp = InnerSort(array, 0, array.Length - 1);
+            T[] temp = InnerSort(array);
 
             for (int i = 0; i < array.Length; i++)
             {
@@ -19,32 +19,32 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
             }
         }
 
-        private T[] InnerSort(T[] array, int left, int right)
+        private T[] InnerSort(T[] array)
         {
-            if (left == right)
+            if (array.Length <= 1)
             {
                 return array;
             }
 
-            int middle = (right + left) / 2;
+            int middle = array.Length / 2;
 
             // copy left part of array
-            T[] lefterArray = new T[middle - left + 1];
-            Array.Copy(array, left, lefterArray, 0, middle - left + 1);
+            T[] lefterArray = new T[middle];
+            Array.Copy(array, 0, lefterArray, 0, middle);
 
             // copy right part of array
-            T[] righterArray = new T[array.Length - middle - 1];
-            Array.Copy(array, middle + 1, righterArray, 0, array.Length - middle - 1);
+            T[] righterArray = new T[array.Length - middle];
+            Array.Copy(array, middle, righterArray, 0, array.Length - middle);
 
             // sort each part
-            T[] lefterResult = InnerSort(lefterArray, 0, lefterArray.Length - 1);
-            T[] righterResult = InnerSort(righterArray, 0, righterArray.Length - 1);
+            lefterArray = InnerSort(lefterArray);
+            righterArray = InnerSort(righterArray);
 
             // return merged result
-            return Marge(lefterResult, righterResult);
+            return Merge(lefterArray, righterArray);
         }
 
-        private T[] Marge(T[] lefterArray, T[] righterArray)
+        private T[] Merge(T[] lefterArray, T[] righterArray)
         {
             int n = lefterArray.Length + righterArray.Length;
 
