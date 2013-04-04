@@ -11,7 +11,6 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
         public void Sort(T[] array)
         {
             BinaryHeap<T> heap = new BinaryHeap<T>(Comparer<T>.Default.Compare);
-
             foreach (T item in array)
             {
                 heap.Insert(item);

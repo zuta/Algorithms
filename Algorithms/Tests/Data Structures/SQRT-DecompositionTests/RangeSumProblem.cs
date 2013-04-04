@@ -19,7 +19,7 @@ namespace SQRT_DecompositionTests
         }
 
         [TestMethod]
-        public void SmallRandomTest()
+        public void RangeSumProblem_SmallRandomTest()
         {
             // arrange
             Random r = new Random();
@@ -37,7 +37,7 @@ namespace SQRT_DecompositionTests
         }
 
         [TestMethod]
-        public void LargeRandomTest()
+        public void RangeSumProblem_LargeRandomTest()
         {
             IRangeSumSolver solver = new SqrtDecompositionRangeSumSolver();
             TestData testData = CreateRandomTest(100000, 100000);

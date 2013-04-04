@@ -4,9 +4,11 @@ using System.Collections.Generic;
 namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
 {
     public interface IBinarySearchTree<TKey, TValue>
-        where TKey : IComparable<TKey>, IEquatable<TKey>
+        where TKey : IComparable<TKey>
     {
         int Count { get; }
+
+        int GetHeight();
 
         IBinarySearchTreeNode<TKey, TValue> Search(TKey key);
 

@@ -3,7 +3,7 @@
 namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
 {
     public class BinarySearchTreeNode<TKey, TValue> : IBinarySearchTreeNode<TKey, TValue>
-        where TKey : IEquatable<TKey>
+        where TKey : IComparable<TKey>
     {
         public TKey Key { get; private set; }
 

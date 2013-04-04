@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
 {
     public class BinarySearchTree<TKey, TValue> : IBinarySearchTree<TKey, TValue>
-        where TKey : IComparable<TKey>, IEquatable<TKey>
+        where TKey : IComparable<TKey>
     {
         private IBinarySearchTreeNode<TKey, TValue> root;
 
@@ -67,7 +67,7 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
                     Insert(root.LeftChild, newNode);
                 }
             }
-            else if (compareResult < 0)
+            else 
             {
                 if (root.RightChild == null)
                 {
@@ -77,10 +77,6 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
                 {
                     Insert(root.RightChild, newNode);
                 }
-            }
-            else 
-            {
-                throw new ArgumentException("An element with the same key already exists in the tree");
             }
         }
 
@@ -103,6 +99,23 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
             Traverse(root.LeftChild, yielder);
             yielder(root);
             Traverse(root.RightChild, yielder);
+        }
+
+        public int GetHeight()
+        {
+            return GetHeight(root);
+        }
+
+        private int GetHeight(IBinarySearchTreeNode<TKey, TValue> root)
+        {
+            if (root == null)
+            {
+                return 0;
+            }
+
+            return Math.Max(
+                root.LeftChild != null ? 1 + GetHeight(root.LeftChild) : 0, 
+                root.RightChild != null ? 1 + GetHeight(root.RightChild) : 0);
         }
     }
 }

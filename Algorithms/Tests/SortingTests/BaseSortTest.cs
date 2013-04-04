@@ -23,7 +23,7 @@ namespace SortingTests
         {
             Random r = new Random();
 
-            int n = (r.Next(1000) + 1) * (r.Next(1000) + 1);
+            int n = (r.Next(5000) + 1) * (r.Next(5000) + 1);
             this.array = new int[n];
             this.expectedResult = new int[n];
             for (int i = 0; i < n; i++)

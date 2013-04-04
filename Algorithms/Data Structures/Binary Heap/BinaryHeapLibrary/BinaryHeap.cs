@@ -26,7 +26,7 @@ namespace Algorithms.DataStructure.BinaryHeap.BinaryHeapLibrary
         {
             while (index != 0)
             {
-                int parentIndex = index % 2 == 0 ? index / 2 - 1 : index / 2;
+                int parentIndex = index % 2 == 0 ? (index >> 1) - 1 : index >> 1;
 
                 if (this.compareFunction(this.items[index], this.items[parentIndex]) > 0)
                 {
@@ -69,8 +69,8 @@ namespace Algorithms.DataStructure.BinaryHeap.BinaryHeapLibrary
         {
             while (true)
             {
-                int leftSonIndex = index * 2 + 1;
-                int rightSonIndex = index * 2 + 2;
+                int leftSonIndex = (index << 1) + 1;
+                int rightSonIndex = (index << 1) + 2;
 
                 bool hasLeftSon = leftSonIndex < this.items.Count;
                 bool hasRightSon = rightSonIndex < this.items.Count;

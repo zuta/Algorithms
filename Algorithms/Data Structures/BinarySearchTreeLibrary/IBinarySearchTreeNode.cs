@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
 {
     public interface IBinarySearchTreeNode<TKey, TValue>
-        where TKey : IEquatable<TKey>
+        where TKey : IComparable<TKey>
     {
         TKey Key { get; }
 

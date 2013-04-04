@@ -88,5 +88,29 @@ namespace BinarySearchTreeTests
             Assert.IsTrue(inOrderTraversedTree[2].Key == 13);
             Assert.IsTrue(inOrderTraversedTree[3].Key == 17);
         }
+
+        [TestMethod]
+        public void BinarySearchTreeTests_GetHeight()
+        {
+            IBinarySearchTree<int, string> tree = new BinarySearchTree<int, string>();
+
+            int height = tree.GetHeight();
+
+            Assert.AreEqual(0, height);
+        }
+
+        [TestMethod]
+        public void BinarySearchTests_GetHeight2()
+        {
+            IBinarySearchTree<int, string> tree = new BinarySearchTree<int, string>();
+            tree.Insert(10, "John");
+            tree.Insert(5, "Clark");
+            tree.Insert(13, "Pitty");
+            tree.Insert(17, "Lilly");
+
+            int height = tree.GetHeight();
+
+            Assert.AreEqual(2, height);
+        }
     }
 }
