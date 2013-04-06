@@ -219,5 +219,27 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
         }
 
         #endregion
+
+        public void Mirror()
+        {
+            Mirror(root);
+        }
+
+        private void Mirror(IBinarySearchTreeNode<TKey, TValue> root)
+        {
+            if (root == null)
+            {
+                return;
+            }
+
+            Mirror(root.LeftChild);
+            Mirror(root.RightChild);
+
+            // swap left and right subtree
+            IBinarySearchTreeNode<TKey, TValue> tmp = root.LeftChild;
+            root.LeftChild = root.RightChild;
+            root.RightChild = tmp;
+        }
+
     }
 }

@@ -137,7 +137,6 @@ namespace BinarySearchTreeTests
             Assert.IsTrue(actualKeys.Count() == 0);
         }
 
-
         [TestMethod]
         public void BinarySearchTreeTests_Remove2()
         {
@@ -256,6 +255,51 @@ namespace BinarySearchTreeTests
                 Assert.IsTrue(expectedKeys.Except(actualKeys).Count() == 0);
                 Assert.IsTrue(actualKeys.Except(expectedKeys).Count() == 0);
             }
+        }
+
+        [TestMethod]
+        public void BinarySearchTreeTests_Mirror()
+        {
+            IBinarySearchTree<int, string> tree = new BinarySearchTree<int, string>();
+            tree.Insert(10, "John");
+            tree.Insert(5, "Clark");
+            tree.Insert(13, "Pitty");
+            tree.Insert(17, "Lilly");
+            tree.Insert(8, "Jack");
+            tree.Insert(0, "Lui");
+            tree.Insert(16, "Petr");
+
+            var expectedOrder = tree.TraverseInOrder().Reverse();
+            
+            tree.Mirror();
+
+            var actualOrder = tree.TraverseInOrder().ToList();
+
+            Assert.IsTrue(expectedOrder.Except(actualOrder).Count() == 0);
+            Assert.IsTrue(actualOrder.Except(expectedOrder).Count() == 0);
+        }
+
+        [TestMethod]
+        public void BinarySearchTreeTests_Random_Mirror()
+        {
+            Random r = new Random();
+            int n = r.Next(1000000) + 1;
+
+            IBinarySearchTree<int, string> tree = new BinarySearchTree<int, string>();
+            for (int i = 0; i < n; i++)
+            {
+                int key = r.Next(int.MaxValue);
+                tree.Insert(key, string.Empty);
+            }
+
+            var expectedOrder = tree.TraverseInOrder().Reverse();
+
+            tree.Mirror();
+
+            var actualOrder = tree.TraverseInOrder().ToList();
+
+            Assert.IsTrue(expectedOrder.Except(actualOrder).Count() == 0);
+            Assert.IsTrue(actualOrder.Except(expectedOrder).Count() == 0);
         }
     }
 }

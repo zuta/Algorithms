@@ -17,5 +17,7 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
         bool Remove(TKey key);
 
         IEnumerable<IBinarySearchTreeNode<TKey, TValue>> TraverseInOrder();
+
+        void Mirror();
     }
 }
