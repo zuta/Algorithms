@@ -12,7 +12,7 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
 
         IBinarySearchTreeNode<TKey, TValue> Search(TKey key);
 
-        void Insert(TKey key, TValue value);
+        IBinarySearchTreeNode<TKey, TValue> Insert(TKey key, TValue value);
 
         bool Remove(TKey key);
 

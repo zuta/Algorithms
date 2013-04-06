@@ -7,7 +7,7 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
     public class BinarySearchTree<TKey, TValue> : IBinarySearchTree<TKey, TValue>
         where TKey : IComparable<TKey>
     {
-        private IBinarySearchTreeNode<TKey, TValue> root;
+        protected IBinarySearchTreeNode<TKey, TValue> root;
 
         public int Count 
         { 
@@ -22,7 +22,7 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
             return Search(root, key);
         }
 
-        private IBinarySearchTreeNode<TKey, TValue> Search(IBinarySearchTreeNode<TKey, TValue> root, TKey key)
+        protected virtual IBinarySearchTreeNode<TKey, TValue> Search(IBinarySearchTreeNode<TKey, TValue> root, TKey key)
         {
             if (root == null)
             {
@@ -43,7 +43,7 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
             return root;
         }
 
-        public void Insert(TKey key, TValue value)
+        public virtual IBinarySearchTreeNode<TKey, TValue> Insert(TKey key, TValue value)
         {
             IBinarySearchTreeNode<TKey, TValue> newNode = new BinarySearchTreeNode<TKey, TValue>(key, value);
 
@@ -55,13 +55,13 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
             {
                 Insert(root, newNode);
             }
+
+            return newNode;
         }
 
         private void Insert(IBinarySearchTreeNode<TKey, TValue> root, IBinarySearchTreeNode<TKey, TValue> newNode)
         {
-            int compareResult = root.Key.CompareTo(newNode.Key);
-
-            if (compareResult > 0)
+            if (root.Key.CompareTo(newNode.Key) > 0)
             {
                 if (root.LeftChild == null)
                 {
