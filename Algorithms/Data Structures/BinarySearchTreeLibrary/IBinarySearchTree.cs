@@ -14,6 +14,8 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
 
         void Insert(TKey key, TValue value);
 
-        IEnumerable<IBinarySearchTreeNode<TKey, TValue>> Traverse();
+        bool Remove(TKey key);
+
+        IEnumerable<IBinarySearchTreeNode<TKey, TValue>> TraverseInOrder();
     }
 }

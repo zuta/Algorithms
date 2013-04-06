@@ -19,7 +19,7 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
             }
 
             int i = 0;
-            foreach (var node in tree.Traverse())
+            foreach (var node in tree.TraverseInOrder())
             {
                 array[i++] = node.Key;
             }

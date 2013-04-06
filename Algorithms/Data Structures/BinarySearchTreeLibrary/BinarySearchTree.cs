@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
 {
@@ -8,7 +9,13 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
     {
         private IBinarySearchTreeNode<TKey, TValue> root;
 
-        public int Count { get; private set; }
+        public int Count 
+        { 
+            get
+            {
+                return TraverseInOrder().Count();
+            }
+        }
 
         public IBinarySearchTreeNode<TKey, TValue> Search(TKey key)
         {
@@ -48,8 +55,6 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
             {
                 Insert(root, newNode);
             }
-
-            Count++;
         }
 
         private void Insert(IBinarySearchTreeNode<TKey, TValue> root, IBinarySearchTreeNode<TKey, TValue> newNode)
@@ -67,7 +72,7 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
                     Insert(root.LeftChild, newNode);
                 }
             }
-            else 
+            else
             {
                 if (root.RightChild == null)
                 {
@@ -80,25 +85,25 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
             }
         }
 
-        public IEnumerable<IBinarySearchTreeNode<TKey, TValue>> Traverse()
+        public IEnumerable<IBinarySearchTreeNode<TKey, TValue>> TraverseInOrder()
         {
-            IList<IBinarySearchTreeNode<TKey,TValue>> result = new List<IBinarySearchTreeNode<TKey,TValue>>();
+            IList<IBinarySearchTreeNode<TKey, TValue>> result = new List<IBinarySearchTreeNode<TKey, TValue>>();
 
-            Traverse(root, result.Add);
+            TraverseInOrder(root, result.Add);
 
             return result;
         }
 
-        private void Traverse(IBinarySearchTreeNode<TKey, TValue> root, Action<IBinarySearchTreeNode<TKey, TValue>> yielder)
+        private void TraverseInOrder(IBinarySearchTreeNode<TKey, TValue> root, Action<IBinarySearchTreeNode<TKey, TValue>> yielder)
         {
             if (root == null)
             {
                 return;
             }
 
-            Traverse(root.LeftChild, yielder);
+            TraverseInOrder(root.LeftChild, yielder);
             yielder(root);
-            Traverse(root.RightChild, yielder);
+            TraverseInOrder(root.RightChild, yielder);
         }
 
         public int GetHeight()
@@ -114,8 +119,105 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
             }
 
             return Math.Max(
-                root.LeftChild != null ? 1 + GetHeight(root.LeftChild) : 0, 
+                root.LeftChild != null ? 1 + GetHeight(root.LeftChild) : 0,
                 root.RightChild != null ? 1 + GetHeight(root.RightChild) : 0);
         }
+
+        #region Removing 
+
+        public bool Remove(TKey key)
+        {
+            if (root == null)
+            {
+                return false;
+            }
+
+            if (root.Key.CompareTo(key) == 0)
+            {
+                root = GetNewChildAfterRemoving(root);
+                return true;
+            }
+
+            return Remove(root, key);
+        }
+
+        private bool Remove(IBinarySearchTreeNode<TKey, TValue> parent, TKey key)
+        {
+            if (parent == null)
+            {
+                return false;
+            }
+
+            if (parent.Key.CompareTo(key) > 0)
+            {
+                if (parent.LeftChild != null && parent.LeftChild.Key.CompareTo(key) == 0)
+                {
+                    parent.LeftChild = GetNewChildAfterRemoving(parent.LeftChild);
+                    return true;
+                }
+                else
+                {
+                    return Remove(parent.LeftChild, key);
+                }
+            }
+            else 
+            {
+                // if (parent.Key.CompareTo(key) < 0)
+                // we exclude case where parent.Key.CompareTo(key) == 0 in the public Remove(key) method 
+                if (parent.RightChild != null && parent.RightChild.Key.CompareTo(key) == 0)
+                {
+                    parent.RightChild = GetNewChildAfterRemoving(parent.RightChild);
+                    return true;
+                }
+                else
+                {
+                    return Remove(parent.RightChild, key);
+                }
+            }
+        }
+
+        private IBinarySearchTreeNode<TKey, TValue> GetNewChildAfterRemoving(IBinarySearchTreeNode<TKey, TValue> removedNode)
+        {
+            if (!removedNode.HasChildren)
+            {
+                return null;
+            }
+            else
+            {
+                if (removedNode.LeftChild == null)
+                {
+                    return removedNode.RightChild;
+                }
+                else if (removedNode.RightChild == null)
+                {
+                    return removedNode.LeftChild;
+                }
+                else // has two children
+                {
+                    IBinarySearchTreeNode<TKey, TValue> parent = removedNode;
+                    IBinarySearchTreeNode<TKey, TValue> leftmostNodeInTheRightSubtree = removedNode.RightChild;
+                    while (leftmostNodeInTheRightSubtree.LeftChild != null)
+                    {
+                        parent = leftmostNodeInTheRightSubtree;
+                        leftmostNodeInTheRightSubtree = leftmostNodeInTheRightSubtree.LeftChild;
+                    }
+
+                    if (parent != removedNode)
+                    {
+                        // leftmostNodeInTheRightSubtree may has ONLY a right child
+                        // we was moving to the left all the time, 
+                        // thus we have to set a new left child for parent of leftmostNodeInTheRightSubtree
+                        parent.LeftChild = leftmostNodeInTheRightSubtree.RightChild;
+                        leftmostNodeInTheRightSubtree.RightChild = removedNode.RightChild;
+                    }
+
+                    leftmostNodeInTheRightSubtree.LeftChild = removedNode.LeftChild;
+
+                    return leftmostNodeInTheRightSubtree;
+                }
+            }
+        }
+
+        #endregion
     }
 }
