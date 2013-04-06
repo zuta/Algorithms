@@ -88,7 +88,28 @@ namespace Algorithms.DataStructure.BinarySearchTree.OrderStatisticTreeLibrary
 
         public int GetRank(IOrderStatisticTreeNode<TKey, TValue> node)
         {
-            throw new NotImplementedException();
+            return GetRank((IOrderStatisticTreeNode<TKey, TValue>)root, node, 0);
+        }
+
+        private int GetRank(IOrderStatisticTreeNode<TKey, TValue> root, IOrderStatisticTreeNode<TKey, TValue> nodeToSearch, int shift)
+        {
+            if (root == null)
+            {
+                return -1;
+            }
+
+            if (root == nodeToSearch)
+            {
+                return root.LeftSubtreeCount + shift;
+            }
+            else if (root.Key.CompareTo(nodeToSearch.Key) > 0)
+            {
+                return GetRank((IOrderStatisticTreeNode<TKey, TValue>)root.LeftChild, nodeToSearch, shift);
+            }
+            else
+            {
+                return GetRank((IOrderStatisticTreeNode<TKey, TValue>)root.RightChild, nodeToSearch, shift + root.LeftSubtreeCount + 1);
+            }
         }
     }
 }
