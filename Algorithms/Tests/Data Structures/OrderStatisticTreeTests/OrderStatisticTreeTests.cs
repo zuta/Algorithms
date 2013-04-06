@@ -31,18 +31,10 @@ namespace OrderStatisticTreeTests
         public void OrderStatisticTreeTests_FindTheKthSmallestNode2()
         {
             IOrderStatisticTree<int, string> tree = new OrderStatisticTree<int, string>();
-            tree.Insert(10, "John");
-            var expectedNode = tree.Insert(5, "Clark");
-            tree.Insert(13, "Pitty");
-            tree.Insert(17, "Lilly");
-            tree.Insert(8, "Jack");
-            tree.Insert(0, "Lui");
-            tree.Insert(16, "Petr");
 
-            var actualNode = tree.FindTheKthSmallestNode(1);
+            var actualNode = tree.FindTheKthSmallestNode(0);
 
-            Assert.IsNotNull(actualNode);
-            Assert.AreEqual(expectedNode, actualNode);
+            Assert.IsNull(actualNode);
         }
 
         [TestMethod]
@@ -105,6 +97,35 @@ namespace OrderStatisticTreeTests
 
                 var actualNode = tree.FindTheKthSmallestNode(request);
                 
+                Assert.IsNotNull(actualNode);
+                Assert.AreEqual(expectedNode, actualNode);
+            }
+        }
+
+        [TestMethod]
+        public void OrderStatisticTreeTests_Random_FindTheKthLargestNode()
+        {
+            Random r = new Random();
+            int n = r.Next(10000) + 1;
+
+            IOrderStatisticTree<int, string> tree = new OrderStatisticTree<int, string>();
+            List<IBinarySearchTreeNode<int, string>> list = new List<IBinarySearchTreeNode<int, string>>();
+            for (int i = 0; i < n; i++)
+            {
+                int key = r.Next(int.MaxValue);
+                list.Add(tree.Insert(key, string.Empty));
+            }
+
+            list.Sort(new Comparison<IBinarySearchTreeNode<int, string>>((x, y) => y.Key.CompareTo(x.Key)));
+
+            for (int i = 0; i < n / 2; i++)
+            {
+                int request = r.Next(i);
+
+                var expectedNode = list[request];
+
+                var actualNode = tree.FindTheKthLargestNode(request);
+
                 Assert.IsNotNull(actualNode);
                 Assert.AreEqual(expectedNode, actualNode);
             }

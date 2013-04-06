@@ -9,8 +9,18 @@ namespace Algorithms.DataStructure.BinarySearchTree.OrderStatisticTreeLibrary
     public interface IOrderStatisticTree<TKey, TValue> : IBinarySearchTree<TKey,TValue>
         where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Finds the k-th smallest node/element in the tree
+        /// </summary>
+        /// <param name="k">the zero-based index</param>
+        /// <returns>k-th smallest node</returns>
         IOrderStatisticTreeNode<TKey, TValue> FindTheKthSmallestNode(int k);
 
+        /// <summary>
+        /// Finds the k-th largest node/element in the tree
+        /// </summary>
+        /// <param name="k">the zero-based index</param>
+        /// <returns>k-th smallest node</returns>
         IOrderStatisticTreeNode<TKey, TValue> FindTheKthLargestNode(int k);
 
         /// <summary>

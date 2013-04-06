@@ -83,7 +83,7 @@ namespace Algorithms.DataStructure.BinarySearchTree.OrderStatisticTreeLibrary
 
         public IOrderStatisticTreeNode<TKey, TValue> FindTheKthLargestNode(int k)
         {
-            throw new NotImplementedException();
+            return FindTheKthSmallestNode(Count - k - 1); 
         }
 
         public int GetRank(IOrderStatisticTreeNode<TKey, TValue> node)
