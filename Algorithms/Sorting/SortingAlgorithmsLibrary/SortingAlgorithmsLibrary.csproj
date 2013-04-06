@@ -50,7 +50,7 @@
       <Project>{c44ba0ad-291d-44e8-8e16-152835245b0d}</Project>
       <Name>BinaryHeapLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Data Structures\BinarySearchTreeLibrary\BinarySearchTreeLibrary.csproj">
+    <ProjectReference Include="..\..\Data Structures\Binary Search Tree\BinarySearchTreeLibrary\BinarySearchTreeLibrary.csproj">
       <Project>{1796d14d-eb52-4796-bafa-c9b7cf6abb25}</Project>
       <Name>BinarySearchTreeLibrary</Name>
     </ProjectReference>

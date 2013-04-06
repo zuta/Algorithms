@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Data Structures\BinarySearchTreeLibrary\BinarySearchTreeLibrary.csproj">
+    <ProjectReference Include="..\..\..\Data Structures\Binary Search Tree\BinarySearchTreeLibrary\BinarySearchTreeLibrary.csproj">
       <Project>{1796d14d-eb52-4796-bafa-c9b7cf6abb25}</Project>
       <Name>BinarySearchTreeLibrary</Name>
     </ProjectReference>
