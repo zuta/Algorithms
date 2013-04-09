@@ -19,5 +19,8 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
         IEnumerable<IBinarySearchTreeNode<TKey, TValue>> TraverseInOrder();
 
         void Mirror();
+
+        // Returns the lowest common ancestor
+        IBinarySearchTreeNode<TKey, TValue> LCA(IBinarySearchTreeNode<TKey, TValue> node1, IBinarySearchTreeNode<TKey, TValue> node2);
     }
 }

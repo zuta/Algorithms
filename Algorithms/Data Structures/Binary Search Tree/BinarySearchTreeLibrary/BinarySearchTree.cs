@@ -9,8 +9,8 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
     {
         protected IBinarySearchTreeNode<TKey, TValue> root;
 
-        public int Count 
-        { 
+        public int Count
+        {
             get
             {
                 return TraverseInOrder().Count();
@@ -123,7 +123,7 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
                 root.RightChild != null ? 1 + GetHeight(root.RightChild) : 0);
         }
 
-        #region Removing 
+        #region Removing
 
         public bool Remove(TKey key)
         {
@@ -160,7 +160,7 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
                     return Remove(parent.LeftChild, key);
                 }
             }
-            else 
+            else
             {
                 // if (parent.Key.CompareTo(key) < 0)
                 // we exclude case where parent.Key.CompareTo(key) == 0 in the public Remove(key) method 
@@ -241,5 +241,40 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
             root.RightChild = tmp;
         }
 
+        public IBinarySearchTreeNode<TKey, TValue> LCA(IBinarySearchTreeNode<TKey, TValue> node1, IBinarySearchTreeNode<TKey, TValue> node2)
+        {
+            // we assume that node1 and node2  have already placed in the tree
+
+            if (node1.Key.CompareTo(node2.Key) > 0)
+            {
+                IBinarySearchTreeNode<TKey, TValue> tmp = node1;
+                node1 = node2;
+                node2 = tmp;
+            }
+
+            return LCA(root, node1, node2);
+        }
+
+        private IBinarySearchTreeNode<TKey, TValue> LCA(IBinarySearchTreeNode<TKey, TValue> root, IBinarySearchTreeNode<TKey, TValue> node1, IBinarySearchTreeNode<TKey, TValue> node2)
+        {
+            if (root == null)
+            {
+                return null;
+            }
+
+            if (root.Key.CompareTo(node1.Key) >= 0 && root.Key.CompareTo(node2.Key) <= 0) // if tree has duplicates, all of them in the right subtree (see insert method)
+            {
+                return root;
+            }
+
+            if (root.Key.CompareTo(node1.Key) > 0 && root.Key.CompareTo(node2.Key) > 0)
+            {
+                return LCA(root.LeftChild, node1, node2);
+            }
+            else
+            {
+                return LCA(root.RightChild, node1, node2);
+            }
+        }
     }
 }

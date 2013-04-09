@@ -301,5 +301,90 @@ namespace BinarySearchTreeTests
             Assert.IsTrue(expectedOrder.Except(actualOrder).Count() == 0);
             Assert.IsTrue(actualOrder.Except(expectedOrder).Count() == 0);
         }
+
+        [TestMethod]
+        public void BinarySearchTreeTests_LCA()
+        {
+            IBinarySearchTree<int, string> tree = new BinarySearchTree<int, string>();
+            
+            IBinarySearchTreeNode<int, string> john = tree.Insert(10, "John");
+            IBinarySearchTreeNode<int, string> clark = tree.Insert(5, "Clark");
+            IBinarySearchTreeNode<int, string> pitty = tree.Insert(13, "Pitty");
+
+            IBinarySearchTreeNode<int, string> ancestor = tree.LCA(john, pitty);
+
+            Assert.IsNotNull(ancestor);
+            Assert.AreEqual(john, ancestor);
+        }
+
+        [TestMethod]
+        public void BinarySearchTreeTests_LCA2()
+        {
+            IBinarySearchTree<int, string> tree = new BinarySearchTree<int, string>();
+
+            IBinarySearchTreeNode<int, string> john = tree.Insert(10, "John");
+            IBinarySearchTreeNode<int, string> clark = tree.Insert(5, "Clark");
+            IBinarySearchTreeNode<int, string> pitty = tree.Insert(13, "Pitty");
+
+            IBinarySearchTreeNode<int, string> ancestor = tree.LCA(clark, pitty);
+
+            Assert.IsNotNull(ancestor);
+            Assert.AreEqual(john, ancestor);
+        }
+
+        [TestMethod]
+        public void BinarySearchTreeTests_LCA3()
+        {
+            IBinarySearchTree<int, string> tree = new BinarySearchTree<int, string>();
+
+            IBinarySearchTreeNode<int, string> john = tree.Insert(10, "John");
+            IBinarySearchTreeNode<int, string> clark = tree.Insert(5, "Clark");
+            IBinarySearchTreeNode<int, string> pitty = tree.Insert(13, "Pitty");
+
+            IBinarySearchTreeNode<int, string> ancestor = tree.LCA(john, john);
+
+            Assert.IsNotNull(ancestor);
+            Assert.AreEqual(john, ancestor);
+        }
+
+        [TestMethod]
+        public void BinarySearchTreeTests_LCA4()
+        {
+            IBinarySearchTree<int, string> tree = new BinarySearchTree<int, string>();
+            IBinarySearchTreeNode<int, string> john = tree.Insert(10, "John");
+            IBinarySearchTreeNode<int, string> clark = tree.Insert(5, "Clark");
+            IBinarySearchTreeNode<int, string> jack = tree.Insert(8, "Jack");
+            IBinarySearchTreeNode<int, string> lui = tree.Insert(3, "Lui");
+            IBinarySearchTreeNode<int, string> lulu = tree.Insert(7, "Lu-lu");
+            IBinarySearchTreeNode<int, string> ben = tree.Insert(6, "Ben");
+            IBinarySearchTreeNode<int, string> joney = tree.Insert(1, "Joney");
+            IBinarySearchTreeNode<int, string> cris = tree.Insert(2, "Cris");
+            IBinarySearchTreeNode<int, string> lenon = tree.Insert(0, "Lenon");
+
+            IBinarySearchTreeNode<int, string> ancestor = tree.LCA(lulu, lenon);
+
+            Assert.IsNotNull(ancestor);
+            Assert.AreEqual(clark, ancestor);
+        }
+
+        [TestMethod]
+        public void BinarySearchTreeTests_LCA5()
+        {
+            IBinarySearchTree<int, string> tree = new BinarySearchTree<int, string>();
+            IBinarySearchTreeNode<int, string> lui = tree.Insert(3, "Lui");
+            IBinarySearchTreeNode<int, string> clark = tree.Insert(5, "Clark");
+            IBinarySearchTreeNode<int, string> joney = tree.Insert(1, "Joney");
+            IBinarySearchTreeNode<int, string> jack = tree.Insert(8, "Jack");
+            IBinarySearchTreeNode<int, string> john = tree.Insert(10, "John");
+            IBinarySearchTreeNode<int, string> ben = tree.Insert(6, "Ben");
+            IBinarySearchTreeNode<int, string> lulu = tree.Insert(7, "Lu-lu");
+            IBinarySearchTreeNode<int, string> cris = tree.Insert(2, "Cris");
+            IBinarySearchTreeNode<int, string> lenon = tree.Insert(0, "Lenon");
+
+            IBinarySearchTreeNode<int, string> ancestor = tree.LCA(lulu, john);
+
+            Assert.IsNotNull(ancestor);
+            Assert.AreEqual(jack, ancestor);
+        }
     }
 }
