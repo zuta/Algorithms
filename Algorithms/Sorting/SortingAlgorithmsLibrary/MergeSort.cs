@@ -11,61 +11,58 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
     {
         public void Sort(T[] array)
         {
-            T[] temp = InnerSort(array);
+            T[] auxiliaryArray = new T[array.Length];
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = temp[i];
-            }
+            InnerSort(array, auxiliaryArray, 0, array.Length - 1);
         }
 
-        private T[] InnerSort(T[] array)
+        private void InnerSort(T[] array, T[] auxiliaryArray, int left, int right)
         {
-            if (array.Length <= 1)
+            if (right == left)
             {
-                return array;
+                return;
             }
 
-            int middle = array.Length / 2;
+            int middle = left + (right - left) / 2;
 
-            // copy left part of array
-            T[] lefterArray = new T[middle];
-            Array.Copy(array, 0, lefterArray, 0, middle);
+            InnerSort(array, auxiliaryArray, left, middle);
+            InnerSort(array, auxiliaryArray, middle + 1, right);
 
-            // copy right part of array
-            T[] righterArray = new T[array.Length - middle];
-            Array.Copy(array, middle, righterArray, 0, array.Length - middle);
-
-            // sort each part
-            lefterArray = InnerSort(lefterArray);
-            righterArray = InnerSort(righterArray);
-
-            // return merged result
-            return Merge(lefterArray, righterArray);
+            Merge(array, auxiliaryArray, left, right);
         }
 
-        private T[] Merge(T[] lefterArray, T[] righterArray)
+        private void Merge(T[] array, T[] auxiliaryArray, int left, int right)
         {
-            int n = lefterArray.Length + righterArray.Length;
+            // copy array
+            Array.Copy(array, left, auxiliaryArray, left, right - left + 1);
 
-            T[] result = new T[n];
+            int middle = left + (right - left) / 2;
+            
+            int i = left;
+            int j = middle + 1;
 
-            int i = 0;
-            int j = 0;
-            for (int p = 0; p < n; p++)
+            for (int p = left; p <= right; p++)
             {
-                if (i < lefterArray.Length && 
-                        (j == righterArray.Length || lefterArray[i].CompareTo(righterArray[j]) < 0))
+                if (i > middle)
                 {
-                    result[p] = lefterArray[i++];
+                    Array.Copy(auxiliaryArray, j, array, p, right - p + 1);
+                    break;
+                }
+                else if (j > right)
+                {
+                    Array.Copy(auxiliaryArray, i, array, p, right - p + 1);
+                    break;
+                }
+
+                if (auxiliaryArray[i].CompareTo(auxiliaryArray[j]) < 0)
+                {
+                    array[p] = auxiliaryArray[i++];
                 }
                 else
                 {
-                    result[p] = righterArray[j++];
+                    array[p] = auxiliaryArray[j++];
                 }
             }
-
-            return result;
         }
     }
 }
