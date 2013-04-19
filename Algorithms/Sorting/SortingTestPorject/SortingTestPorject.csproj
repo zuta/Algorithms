@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{95D82183-9155-4479-AA17-9DA97AE7A552}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{6A911ECC-A951-4AA8-84ED-D6384E85E350}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Algorithms.Sorting.SortingAlgorithmsLibrary</RootNamespace>
-    <AssemblyName>SortingAlgorithmsLibrary</AssemblyName>
+    <RootNamespace>SortingTestPorject</RootNamespace>
+    <AssemblyName>SortingTestPorject</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -20,41 +22,38 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinarySearchTreeSort.cs" />
-    <Compile Include="BottomUpMergeSort.cs" />
-    <Compile Include="HeapSort.cs" />
-    <Compile Include="ISort.cs" />
-    <Compile Include="MergeSort.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Data Structures\Binary Heap\BinaryHeapLibrary\BinaryHeapLibrary.csproj">
-      <Project>{c44ba0ad-291d-44e8-8e16-152835245b0d}</Project>
-      <Name>BinaryHeapLibrary</Name>
+    <ProjectReference Include="..\SortingAlgorithmsLibrary\SortingAlgorithmsLibrary.csproj">
+      <Project>{95d82183-9155-4479-aa17-9da97ae7a552}</Project>
+      <Name>SortingAlgorithmsLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Data Structures\Binary Search Tree\BinarySearchTreeLibrary\BinarySearchTreeLibrary.csproj">
-      <Project>{1796d14d-eb52-4796-bafa-c9b7cf6abb25}</Project>
-      <Name>BinarySearchTreeLibrary</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -53,11 +53,43 @@ namespace Algorithms.DataStructure.BinarySearchTree.BinarySearchTreeLibrary
             }
             else
             {
-                Insert(root, newNode);
+                // Insert(root, newNode);
+				NonRecursiveInsert(root, newNode);
             }
 
             return newNode;
         }
+
+		private void NonRecursiveInsert(IBinarySearchTreeNode<TKey, TValue> root, IBinarySearchTreeNode<TKey, TValue> newNode)
+		{
+			while (true)
+			{
+				if (root.Key.CompareTo(newNode.Key) > 0)
+				{
+					if (root.LeftChild == null)
+					{
+						root.LeftChild = newNode;
+						return;
+					}
+					else
+					{
+						root = root.LeftChild;
+					}
+				}
+				else
+				{
+					if (root.RightChild == null)
+					{
+						root.RightChild = newNode;
+						return;
+					}
+					else
+					{
+						root = root.RightChild;
+					}
+				}
+			}
+		}
 
         private void Insert(IBinarySearchTreeNode<TKey, TValue> root, IBinarySearchTreeNode<TKey, TValue> newNode)
         {

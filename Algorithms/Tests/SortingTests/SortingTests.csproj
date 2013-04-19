@@ -55,6 +55,7 @@
     <Compile Include="BaseSortTest.cs" />
     <Compile Include="MergeSortTests.cs" />
     <Compile Include="BinarySearchTreeSortTests.cs" />
+    <Compile Include="BottomUpMergeSortTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Sorting\SortingAlgorithmsLibrary\SortingAlgorithmsLibrary.csproj">
