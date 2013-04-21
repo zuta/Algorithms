@@ -7,79 +7,101 @@ using Algorithms.Sorting.SortingAlgorithmsLibrary;
 
 namespace SortingTestPorject
 {
-	class Program
-	{
-		private static Stopwatch stopwatch = new Stopwatch();
+    class Program
+    {
+        private static Stopwatch stopwatch = new Stopwatch();
 
-		private static ISort<int>[] sortingAlgorithms = 
-						{
-							//new BinarySearchTreeSort<int>(),
-							//new HeapSort<int>(),
-							new MergeSort<int>(),
-							new BottomUpMergeSort<int>(),
-						};
+        private static ISort<int>[] sortingAlgorithms = 
+                        {
+                            //new BinarySearchTreeSort<int>(),
+                            //new HeapSort<int>(),
+                            new MergeSort<int>(),
+                            new BottomUpMergeSort<int>(),
+                            new QuickSort<int>(),
+                        };
 
-		static void Main(string[] args)
-		{
-			RandomTest();
+        static void Main(string[] args)
+        {
+            //RandomTest();
 
-			AlreadyInOrderTest();
+            //AlreadyInOrderTest();
 
-			Console.WriteLine("Press any key...");
-			Console.ReadKey();
-		}
+            AlreadyInOrderTest2();
 
-		private static void AlreadyInOrderTest()
-		{
-			Console.WriteLine("*** Already In Order Test ***");
+            Console.WriteLine("Press any key...");
+            Console.ReadKey();
+        }
 
-			int n = 10000000;
-			int[] array = new int[n];
-			for (int i = 0; i < n; i++)
-			{
-				array[i] = 1713 * 13 + i;
-			}
+        private static void AlreadyInOrderTest()
+        {
+            Console.WriteLine("*** Already In Order Test ***");
 
-			DoSorting(array);
+            int n = 10000000;
+            int[] array = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = 1713 * 13 + i;
+            }
 
-			Console.WriteLine();
-		}
+            DoSorting(array);
 
-		private static void RandomTest()
-		{
-			Console.WriteLine("*** Random Test ***");
-			
-			Random r = new Random();
+            Console.WriteLine();
+        }
 
-			int n = 1000000;
-			int[] array = new int[n];
-			for (int i = 0; i < n; i++)
-			{
-				array[i] = r.Next(int.MaxValue) - r.Next(int.MaxValue);
-			}
+        private static void AlreadyInOrderTest2()
+        {
+            Console.WriteLine("*** Already In Order Test - 2 ***");
 
-			DoSorting(array);
+            List<int> a = new List<int>();
+            int n = 250000;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    a.Add(i * 1331 - j);
+                }
+            }
 
-			Console.WriteLine();
-		}
+            DoSorting(a.ToArray());
 
-		private static void DoSorting(int[] array)
-		{
-			foreach(ISort<int> sorter in sortingAlgorithms)
-			{
-				Sort(sorter, array);
-			}
-		}
+            Console.WriteLine();
+        }
 
-		private static void Sort(ISort<int> sorter, int[] array)
-		{
-			stopwatch.Start();
-			sorter.Sort(array);
-			stopwatch.Stop();
+        private static void RandomTest()
+        {
+            Console.WriteLine("*** Random Test ***");
+            
+            Random r = new Random();
 
-			Console.WriteLine("{0} - {1:00} ms", sorter.Name, stopwatch.Elapsed.TotalMilliseconds);
+            int n = 1000000;
+            int[] array = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = r.Next(int.MaxValue) - r.Next(int.MaxValue);
+            }
 
-			stopwatch.Reset();
-		}
-	}
+            DoSorting(array);
+
+            Console.WriteLine();
+        }
+
+        private static void DoSorting(int[] array)
+        {
+            foreach(ISort<int> sorter in sortingAlgorithms)
+            {
+                Sort(sorter, array);
+            }
+        }
+
+        private static void Sort(ISort<int> sorter, int[] array)
+        {
+            stopwatch.Start();
+            sorter.Sort(array);
+            stopwatch.Stop();
+
+            Console.WriteLine("{0} - {1:00} ms", sorter.Name, stopwatch.Elapsed.TotalMilliseconds);
+
+            stopwatch.Reset();
+        }
+    }
 }
