@@ -25,5 +25,9 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
             }
         }
 
-    }
+		public string Name
+		{
+			get { return "BinarySearchTreeSort"; }
+		}
+	}
 }

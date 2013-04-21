@@ -9,6 +9,11 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
     public class MergeSort<T> : ISort<T>
         where T : IComparable<T>
     {
+		public string Name
+		{
+			get { return "MergeSort"; }
+		}
+
         public void Sort(T[] array)
         {
             T[] auxiliaryArray = new T[array.Length];

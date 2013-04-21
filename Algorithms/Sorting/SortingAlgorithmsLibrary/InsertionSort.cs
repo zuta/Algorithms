@@ -21,5 +21,10 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
                 array[j + 1] = tmp;
             }
         }
+
+        public string Name
+        {
+            get { return "InsertionSort"; }
+        }
     }
 }

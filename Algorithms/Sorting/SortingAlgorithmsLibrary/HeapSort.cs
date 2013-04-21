@@ -8,6 +8,11 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
     public class HeapSort<T> : ISort<T>
         where T : IComparable<T>
     {
+		public string Name
+		{
+			get { return "HeapSort"; }
+		}
+
         public void Sort(T[] array)
         {
             BinaryHeap<T> heap = new BinaryHeap<T>(Comparer<T>.Default.Compare);
