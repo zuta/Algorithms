@@ -5,24 +5,24 @@ using Algorithms.Sorting.SortingAlgorithmsLibrary;
 namespace SortingTests
 {
     [TestClass]
-    public class InsertionSortTests : BaseQuadraticSortTest
+    public class SelectionSortTests : BaseQuadraticSortTest
     {
         [TestInitialize]
         public void Initialize()
         {
-            this.sorter = new InsertionSort<int>();
+            this.sorter = new SelectionSort<int>();
         }
 
         [TestMethod]
         [TestCategory("Quadratic Sorts")]
-        public void InsertionSortTests_SimpleTest()
+        public void SelectionSortTests_SimpleTest()
         {
             ExecuteSimpleSortTest();
         }
 
         [TestMethod]
         [TestCategory("Quadratic Sorts")]
-        public void InsertionSortTests_RandomLargeTest()
+        public void SelectionSortTests_RandomLargeTest()
         {
             ExecuteRandomLargeSortTest();
         }
