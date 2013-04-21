@@ -19,13 +19,22 @@ namespace SortingTests
             this.expectedResult = new int[] { 0, 1, 1, 3, 4, 5, 9, 13 };
         }
 
+        protected virtual int GetAmountOfNumbersForLargeTest()
+        {
+            Random r = new Random();
+
+            return (r.Next(3000) + 1) * (r.Next(3000) + 1);
+        }
+
         private void ArrangeRandomLargeTest()
         {
             Random r = new Random();
 
-            int n = (r.Next(3000) + 1) * (r.Next(3000) + 1);
+            int n = GetAmountOfNumbersForLargeTest();
+
             this.array = new int[n];
             this.expectedResult = new int[n];
+
             for (int i = 0; i < n; i++)
             {
                 array[i] = r.Next(int.MaxValue) - r.Next(int.MaxValue);
