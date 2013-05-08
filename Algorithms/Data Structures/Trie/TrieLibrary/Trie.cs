@@ -50,5 +50,27 @@ namespace Algorithms.DataStructure.Trie.TrieLibrary
 
             return current.IsEnd;
         }
+
+        public IEnumerable<IEnumerable<T>> EnumerateInOrder()
+        {
+            return EnumerateInOrder(root, new List<T>());
+        }
+
+        private IEnumerable<IEnumerable<T>> EnumerateInOrder(TrieNode<T> root, List<T> list)
+        {
+            if (root.IsEnd) yield return list;
+
+            foreach (var child in root.Links.OrderBy(pair => pair.Key))
+            {
+                list.Add(child.Key);
+
+                foreach (IEnumerable<T> sequence in EnumerateInOrder(child.Value, list))
+                {
+                    yield return sequence;
+                }
+
+                list.RemoveAt(list.Count - 1);
+            }
+        }
     }
 }
