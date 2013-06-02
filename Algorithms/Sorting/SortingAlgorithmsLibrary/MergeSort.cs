@@ -9,10 +9,10 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
     public class MergeSort<T> : ISort<T>
         where T : IComparable<T>
     {
-		public string Name
-		{
-			get { return "MergeSort"; }
-		}
+        public string Name
+        {
+            get { return "MergeSort"; }
+        }
 
         public void Sort(T[] array)
         {
@@ -42,7 +42,7 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
             Array.Copy(array, left, auxiliaryArray, left, right - left + 1);
 
             int middle = left + (right - left) / 2;
-            
+
             int i = left;
             int j = middle + 1;
 

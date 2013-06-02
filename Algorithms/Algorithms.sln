@@ -51,6 +51,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrieTests", "Tests\Data Str
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalSorting", "Sorting\ExternalSorting\ExternalSorting.csproj", "{6B4C7548-E669-4863-B546-9C742C8BB240}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{FD3E2F5E-56D6-4DD6-A04F-9786E36BC2A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Longest Increasing Subsequence", "Misc\Longest Increasing Subsequence\Longest Increasing Subsequence.csproj", "{7B28FB24-F9E1-4084-A242-3D3959D7A35A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +117,10 @@ Global
 		{6B4C7548-E669-4863-B546-9C742C8BB240}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B4C7548-E669-4863-B546-9C742C8BB240}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B4C7548-E669-4863-B546-9C742C8BB240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B28FB24-F9E1-4084-A242-3D3959D7A35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B28FB24-F9E1-4084-A242-3D3959D7A35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B28FB24-F9E1-4084-A242-3D3959D7A35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B28FB24-F9E1-4084-A242-3D3959D7A35A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,5 +145,6 @@ Global
 		{1796D14D-EB52-4796-BAFA-C9B7CF6ABB25} = {17664728-6122-4C28-9BBD-E572A5BD90BA}
 		{D0C27D97-F5FC-4D22-8ED3-95511AB0B885} = {17664728-6122-4C28-9BBD-E572A5BD90BA}
 		{03D5AF62-D685-4A6C-80B3-25A2CAD1711C} = {40D2C56C-161D-42F8-A266-831C6FDE2FE7}
+		{7B28FB24-F9E1-4084-A242-3D3959D7A35A} = {FD3E2F5E-56D6-4DD6-A04F-9786E36BC2A6}
 	EndGlobalSection
 EndGlobal
