@@ -8,6 +8,10 @@ namespace Longest_Increasing_Subsequence
     /// <summary>
     /// Complexity : O(N * log N)
     /// Aux. Memory : O(N)
+    /// 
+    /// Aux.arrays :
+    /// M[j] — stores the position k of the smallest value X[k] such that there is an increasing subsequence of length j ending at X[k]
+    /// P[k] — stores the position of the predecessor of X[k] in the longest increasing subsequence ending at X[k].
     /// </summary>
     class EfficientSolver : ISolver
     {
