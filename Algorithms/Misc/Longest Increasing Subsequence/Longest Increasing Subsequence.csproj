@@ -7,7 +7,7 @@
     <ProjectGuid>{7B28FB24-F9E1-4084-A242-3D3959D7A35A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Longest_Increasing_Subsequence</RootNamespace>
+    <RootNamespace>Misc.Longest_Increasing_Subsequence</RootNamespace>
     <AssemblyName>Longest Increasing Subsequence</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

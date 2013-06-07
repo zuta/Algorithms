@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Longest_Increasing_Subsequence
+namespace Misc.Longest_Increasing_Subsequence
 {
     /// <summary>
     /// Complexity : O(N * log N)
