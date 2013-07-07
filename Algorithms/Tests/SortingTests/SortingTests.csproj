@@ -60,6 +60,7 @@
     <Compile Include="SelectionSortTests.cs" />
     <Compile Include="BottomUpMergeSortTests.cs" />
     <Compile Include="QuickSortTests.cs" />
+    <Compile Include="PancakeSortTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Sorting\SortingAlgorithmsLibrary\SortingAlgorithmsLibrary.csproj">
