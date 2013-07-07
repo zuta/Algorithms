@@ -16,7 +16,7 @@ namespace Algorithms.Sorting.SortingAlgorithmsLibrary
 
         private void Sort(T[] array, int left, int right)
         {
-            if (right - left > 1)
+            if (right - left > 0)
             {
                 int l = left, r = right;
                 T m = array[l + (r - l) / 2];
