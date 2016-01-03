@@ -1,4 +1,4 @@
 Algorithms
 ==========
 
-An implementations of popular algorithms on C#
+Implementations of popular algorithms written in C#
